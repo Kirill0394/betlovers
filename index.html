@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой сайт букмейкерской конторы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .feature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .feature-content {
+            text-align: left;
+        }
+        @media (max-width: 768px) {
+            .feature {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Букмейкерская контора "Любители ставок"</h1>
+    </header>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#sports">Виды спорта</a>
+        <a href="#betting">Ставки</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+    <section id="home">
+        <h2>Добро пожаловать в нашу букмейкерскую контору!</h2>
+        <p>У нас вы можете делать ставки на самые популярные виды спорта.</p>
+    </section>
+    <section id="sports">
+        <h2>Виды спорта</h2>
+        <div class="feature">
+            <img src="football.png" alt="Футбол">
+            <div class="feature-content">
+                <h3>Футбол</h3>
+                <p>Ставьте на ваши любимые команды и матчи.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="basketball.png" alt="Баскетбол">
+            <div class="feature-content">
+                <h3>Баскетбол</h3>
+                <p>Играйте на победу вашей команды в баскетбольном турнире.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="tennis.png" alt="Теннис">
+            <div class="feature-content">
+                <h3>Теннис</h3>
+                <p>Следите за турнирами и делайте ставки на лучших теннисистов.</p>
+            </div>
+        </div>
+    </section>
+    <section id="betting">
+        <h2>Ставки</h2>
+        <p>У нас вы можете сделать ставку на понравившееся вам событие в режиме реального времени.</p>
+    </section>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами по телефону: +7 (XXX) XXX-XX-XX или по электронной почте: info@example.com</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Букмейкерская контора "Любители ставок". Все права защищены.</p>
+    </footer>
+</body>
+</html>
