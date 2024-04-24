@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Топопвый молодой букмекер</title>
+    <title>Топовый молодой букмекер</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,10 +51,15 @@
             opacity: 0; /* Начальное состояние элемента - невидимость */
         }
         .feature img {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             margin-right: 20px;
             border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+        .feature img:hover {
+            transform: scale(1.1);
         }
         .feature-content {
             text-align: left;
@@ -77,6 +82,7 @@
 <body>
     <header>
         <h1>Букмекерская контора "Любители ставок"</h1>
+        <p> Топовый молодой букмекер </p>
     </header>
     <nav>
         <a href="#home">Главная</a>
@@ -89,8 +95,15 @@
         <p>У нас Вы можете делать ставки на самые популярные виды спорта.</p>
     </section>
 
-    <section class="sports">
-        <h2>Виды спорта</h2>
+    <section class="sports" style="
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    ">
+        <h2 style=" width: 100%;">
+        Виды спорта </h2>
         <div class="feature">
             <img src="football.png" alt="Футбол">
             <div class="feature-content">
