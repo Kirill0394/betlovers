@@ -1,45 +1,156 @@
-<style>
-    #sports {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .feature {
-        margin: 10px 0;
-        text-align: center;
-        display: flex;
-        align-items: center;
-    }
-    .feature img {
-        margin-right: 10px;
-    }
-    .feature-content {
-        text-align: left;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Топопвый молодой букмекер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .feature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            opacity: 0; /* Начальное состояние элемента - невидимость */
+        }
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .feature-content {
+            text-align: left;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .feature.animated {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Букмекерская контора "Любители ставок"</h1>
+    </header>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#sports">Виды спорта</a>
+        <a href="#betting">Ставки</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+    <section id="home">
+        <h2>Добро пожаловать в нашу букмекерскую контору!</h2>
+        <p>У нас Вы можете делать ставки на самые популярные виды спорта.</p>
+    </section>
 
-<section id="sports">
-    <h2>Виды спорта</h2>
-    <div class="feature">
-        <img src="football.png" alt="Футбол">
-        <div class="feature-content">
-            <h3>Футбол</h3>
-            <p>Ставьте на ваши любимые команды и матчи.</p>
+    <section class="sports">
+        <h2>Виды спорта</h2>
+        <div class="feature">
+            <img src="football.png" alt="Футбол">
+            <div class="feature-content">
+                <h3>Футбол</h3>
+                <p>Ставьте на победу Вашей команды в турнире по футболу.</p>
+            </div>
         </div>
-    </div>
-    <div class="feature">
-        <img src="basketball.png" alt="Баскетбол">
-        <div class="feature-content">
-            <h3>Баскетбол</h3>
-            <p>Играйте на победу вашей команды в баскетбольном турнире.</p>
+        <div class="feature">
+            <img src="basketball.png" alt="Баскетбол">
+            <div class="feature-content">
+                <h3>Баскетбол</h3>
+                <p>Играйте на победу Вашей команды в баскетбольном турнире.</p>
+            </div>
         </div>
-    </div>
-    <div class="feature">
-        <img src="tennis.png" alt="Теннис">
-        <div class="feature-content">
-            <h3>Теннис</h3>
-            <p>Следите за турнирами и делайте ставки на лучших теннисистов.</p>
+        <div class="feature">
+            <img src="tennis.png" alt="Теннис">
+            <div class="feature-content">
+                <h3>Теннис</h3>
+                <p>Следите за турнирами и делайте ставки на лучших теннисистов.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="betting">
+        <h2>Ставки</h2>
+        <p>У нас вы можете сделать ставку на понравившееся вам событие в режиме реального времени.</p>
+    </section>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>У нас Вы можете сделать ставку на понравившееся вам событие в режиме реального времени.
+            Принимаются ставки от 100₽ по СПБ на номер 89174585503, Тинькофф, в описании платежа укажите на какое событие ставка</p>
+    </section>
+
+    <script>
+        // JavaScript код для добавления анимации при прокрутке к элементам с классом feature
+        document.addEventListener('DOMContentLoaded', function() {
+            var features = document.querySelectorAll('.feature');
+
+            function checkScroll() {
+                features.forEach(function(feature) {
+                    if (isElementInViewport(feature) && !feature.classList.contains('animated')) {
+                        feature.classList.add('animated');
+                    }
+                });
+            }
+
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+    </script>
+
+</body>
+</html>
